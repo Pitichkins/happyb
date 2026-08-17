@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения! ✨</title>
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Библиотека для салюта из конфетти -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Розовые летающие шарики на фоне -->
+    <div class="balloons-container" id="balloons"></div>
+
+    <main class="container">
+        
+        <!-- ЭКРАН 1: Ввод имени -->
+        <div id="name-screen" class="card">
+            <div class="cat-icon">🐱</div>
+            <h2>Привет! Кому принадлежит этот праздник?</h2>
+            <p class="subtitle">Введи свое имя, чтобы открыть секрет:</p>
+            
+            <form onsubmit="checkName(event)">
+                <input type="text" id="nameInput" placeholder="Например: Станислава" required autocomplete="off">
+                <button type="submit" class="btn">Открыть сюрприз 🎁</button>
+            </form>
+            <p id="error-hint" class="hint"></p>
+        </div>
+
+        <!-- ЭКРАН 2: Поздравление (скрыто) -->
+        <div id="greeting-screen" class="card greeting-card" style="display: none;">
+            
+            <div class="cats-header">
+                <span class="cat-bounce">😻</span>
+                <span class="cat-bounce delay-1">💖</span>
+                <span class="cat-bounce delay-2">🐾</span>
+            </div>
+
+            <h1 class="title">С Днём Рождения, Станислава! 🎉</h1>
+            <h3 class="subtitle-name">(Любимая Стася! 💕)</h3>
+
+            <!-- Эффект печатной машинки -->
+            <div class="typewriter-container">
+                <span id="typewriter-text"></span><span class="cursor">|</span>
+            </div>
+
+            <!-- Милые карточки с комплиментами -->
+            <div class="wishes-grid">
+                <div class="wish-item">🌸 Ты самая нежная и прекрасная</div>
+                <div class="wish-item">✨ Пусть все мечты исполняются</div>
+                <div class="wish-item">🐱 Ты приносишь тепло и радость</div>
+                <div class="wish-item">💖 Обнимаю и крепко люблю!</div>
+            </div>
+
+            <button onclick="launchConfetti()" class="btn btn-repeat">Еще больше конфетти! 🎊</button>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
